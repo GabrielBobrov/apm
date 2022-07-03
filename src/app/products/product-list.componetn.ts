@@ -5,7 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './product-list.component.html',
 })
 export class ProductListComponent {
-  pageTitle: string = 'Product List';
+  pageTitle = 'Product List';
+  imageWidht = 50;
+  imageMargin: number = 2;
+  showImage = false;
+  listFilter = 'cart';
   products: any[] = [
     {
       productId: 2,
@@ -15,7 +19,7 @@ export class ProductListComponent {
       description: 'blablabla',
       price: 32.88,
       startRating: 4.2,
-      imageUrl: 'assets/images/gardem_cart.png',
+      imageUrl: 'assets/images/garden_cart.png',
     },
     {
       productId: 5,
@@ -28,4 +32,8 @@ export class ProductListComponent {
       imageUrl: 'assets/images/hammer.png',
     },
   ];
+
+  toggleImage(): void {
+    this.showImage = !this.showImage;
+  }
 }
